@@ -7,14 +7,20 @@ class Email
 		config.domain = 'sandbox1bd64ea45b5147c2894437d89ceaba68.mailgun.org'
 	end
 
-	@mailgun = Mailgun(:api_key => 'key-57tsip-q95ud6bki67v65a1l7we40oi2')
+	def send_email(recipient)
 
-	parameters = {
-  		:to => "kaylagolfs@aol.com",
-  		:subject => "please work!",
-  		:text => "THIS IS MY EMAIL",
-  		:from => "postmaster@sandbox1bd64ea45b5147c2894437d89ceaba68.mailgun.org"
-	}
+		@mailgun = Mailgun(:api_key => 'key-57tsip-q95ud6bki67v65a1l7we40oi2')
 
-	@mailgun.messages.send_email(parameters)
+		parameters = {
+  			:to => "email_address",
+  			:subject => "please work!",
+  			:text => "THIS IS MY EMAIL",
+  			:from => "postmaster@sandbox1bd64ea45b5147c2894437d89ceaba68.mailgun.org"
+		}
+		parameters[:to] = recipient
+
+		@mailgun.messages.send_email(parameters)
+	end
 end
+email_me = Email.new
+email_me.send_email("kaylagolfs@aol.com")
