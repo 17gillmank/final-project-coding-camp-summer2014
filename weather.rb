@@ -4,10 +4,44 @@ require 'open-uri'
 
 
 
-weather = Nokogiri::HTML(open('http://www.weather.com/weather/today/New+York+NY+10028:4:US'))
 
-binding.pry
+#binding.pry
 
-temperature_today = weather.css("div.wx-temperature").children[2].text
+class Scrape
+	attr_accessor :temperature_today, :weather_conditions_today, :chance_of_rain_today, :temperature_tonight, :weather_conditions_tonight, :chance_of_rain_tonight
 
-temperature_tonight = weather.css("div.wx-temperature").children[4].text
+	def initialize
+		@weather = Nokogiri::HTML(open('http://www.weather.com/weather/today/New+York+NY+10028:4:US'))
+		@temperature_today = self.scrape_temp_today
+		@weather_conditions_today = self.scrape_conditions_today
+		@chance_of_rain_today = self.scrape_chance_rain_today
+		@temperature_tonight = self.scrape_temp_tonight
+		@weather_conditions_tonight = self.scrape_conditions_tonight
+		@chance_of_rain_tonight = self.scrape_chance_rain_tonight
+	end
+
+	def scrape_temp_today
+	 	@weather.css("div.wx-temperature").children[2].text
+	 end
+
+	def scrape_conditions_today
+		@weather.css("div.wx-data-part").children[30].text
+	end
+
+	def scrape_chance_rain_today
+	 	@weather.css("div.wx-data-part").children[43].text
+	end
+
+	def scrape_temp_tonight
+		@weather.css("div.wx-temperature").children[4].text
+	end
+
+	def scrape_conditions_tonight
+		@weather.css("div.wx-data-part").children[33].text
+	end
+
+	def scrape_chance_rain_tonight
+		@weather.css("div.wx-data-part").children[48].text
+	end
+
+end
