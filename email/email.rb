@@ -1,5 +1,4 @@
 require 'mailgun'
-require '../weather.rb'
 
 class Email
 
@@ -11,7 +10,9 @@ class Email
 	def send_email(recipient)
 
 		@mailgun = Mailgun(:api_key => 'key-57tsip-q95ud6bki67v65a1l7we40oi2')
+		
 		scraper = Scrape.new
+
 		parameters = {
   			:to => "email_address",
   			:subject => "Today's Weather",
@@ -26,6 +27,4 @@ class Email
 
 	end
 end
-email_me = Email.new
-email_me.send_email("kaylagolfs@aol.com")
 
