@@ -1,8 +1,8 @@
 require 'nokogiri'
 require 'mailgun'
 require 'open-uri'
-require './email/email.rb'
-require './weather.rb'
+require './lib/email.rb'
+require './lib/weather.rb'
 
 
 task :email do
@@ -10,6 +10,9 @@ task :email do
 
 	email = Email.new
 	email.send_email("kaylagolfs@aol.com")
+
+	email1 = Email.new
+	email1.send_email("nancygillman@gmail.com")
 
 
 end
