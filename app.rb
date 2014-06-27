@@ -5,6 +5,8 @@ require './lib/email.rb'
 require 'pry'
 require './lib/weather.rb'
 
-get '/' do |variable|
+get '/' do 
+	@weather = Scrape.new
+	erb :index
 	
 end

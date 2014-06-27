@@ -1,5 +1,6 @@
 require 'mailgun'
 
+
 class Email
 
 	Mailgun.configure do |config|

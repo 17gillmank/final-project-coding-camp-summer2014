@@ -1,0 +1,36 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text.css" href="/index.css">
+	<title> Weather </title>
+</head>
+
+<body class=fontcolor>
+	<h1> It's Time for the Weather! </h1>
+
+	<h3> Today's Weather: </h3>
+
+	<p> Today's High: <%= @weather.temperature_today%> </p>
+
+	<p> Chance of Rain: <%= @weather.chance_of_rain_today%> </p>
+
+	<p> Weather Conditions: <%= @weather.weather_conditions_today%> </p>
+
+	<h3> Tonight's Weather: </h3>
+
+	<p> Tonight's Low: <%= @weather.temperature_tonight%> </p>
+
+	<p> Chance of Rain: <%= @weather.chance_of_rain_tonight%> </p>
+
+	<p> Weather Conditions: <%= @weather.weather_conditions_tonight%> </p>
+
+	<h4> Have a nice day! </h4>
+
+	<img src="http://teacherforfrench.com/wp-content/uploads/2014/03/weather.jpg">
+
+	<h6> All data credits of http://www.weather.com/weather/today/New+York+NY+10028:4:US </h6>
+</body>
+
+</html>
+
+
