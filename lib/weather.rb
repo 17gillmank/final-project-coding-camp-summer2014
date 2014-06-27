@@ -5,7 +5,7 @@ require 'open-uri'
 
 
 
-#binding.pry
+# binding.pry
 
 class Scrape
 	attr_accessor :temperature_today, :weather_conditions_today, :chance_of_rain_today, :temperature_tonight, :weather_conditions_tonight, :chance_of_rain_tonight
