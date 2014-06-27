@@ -1,5 +1,4 @@
 require 'mailgun'
-require 'pry'
 require_relative './weather'
 
 
@@ -15,8 +14,7 @@ class Email
 		@mailgun = Mailgun(:api_key => 'key-57tsip-q95ud6bki67v65a1l7we40oi2')
 		
 		@scraper = Scrape.new
-		#binding.pry
-		binding.pry
+
 
 		parameters = {
   			:to => "email_address",

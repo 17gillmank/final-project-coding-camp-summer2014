@@ -29,7 +29,7 @@ class Scrape
 	end
 
 	def scrape_chance_rain_today
-	 	@weather.css("div.wx-data-part").children[41].text
+	 	@weather.css("div.wx-data-part").children[43].children[1].text
 	end
 
 	def scrape_temp_tonight
@@ -37,11 +37,11 @@ class Scrape
 	end
 
 	def scrape_conditions_tonight
-		@weather.css("div.wx-data-part").children[31].text
+		@weather.css("div.wx-data-part").children[28].text
 	end
 
 	def scrape_chance_rain_tonight
-		@weather.css("div.wx-data-part").children[46].text
+		@weather.css("div.wx-data-part").children[38].children[1].text
 	end
 
 end
