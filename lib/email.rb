@@ -21,8 +21,8 @@ class Email
   			:to => "email_address",
   			:subject => "Today's Weather",
   			:text => "Good morning!
-	Today there is a #{scraper.scrape_chance_rain_today} chance of rain and #{scraper.scrape_conditions_today}. The high is #{scraper.scrape_temp_today}.
-  	Tonight there is a #{scraper.scrape_chance_rain_tonight} chance of rain and #{scraper.scrape_conditions_tonight}. The low is #{scraper.scrape_temp_tonight}. ",
+	Today there is a #{scraper.chance_of_rain_today} chance of rain and #{scraper.weather_conditions_today}. The high is #{scraper.temperature_today}.
+  	Tonight there is a #{scraper.chance_of_rain_tonight} chance of rain and #{scraper.weather_conditions_tonight}. The low is #{scraper.temperature_tonight}. ",
   			:from => "postmaster@sandbox1bd64ea45b5147c2894437d89ceaba68.mailgun.org"
 		}
 		parameters[:to] = recipient
