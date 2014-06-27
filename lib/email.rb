@@ -1,6 +1,6 @@
 require 'mailgun'
 require 'pry'
-require './weather'
+require_relative './weather'
 
 
 class Email
