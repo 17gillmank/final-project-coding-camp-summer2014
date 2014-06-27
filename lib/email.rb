@@ -1,5 +1,5 @@
 require 'mailgun'
-#require 'pry'
+require 'pry'
 require_relative './weather'
 
 
@@ -16,6 +16,7 @@ class Email
 		
 		@scraper = Scrape.new
 		#binding.pry
+		binding.pry
 
 		parameters = {
   			:to => "email_address",
