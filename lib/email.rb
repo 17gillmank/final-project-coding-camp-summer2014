@@ -1,5 +1,5 @@
 require 'mailgun'
-require 'pry'
+#require 'pry'
 require_relative './weather'
 
 
